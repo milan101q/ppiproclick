@@ -133,21 +133,43 @@
             </div>
             
             <!-- Hero Mockup -->
-            <div class="relative mx-auto w-full max-w-lg lg:max-w-none flex justify-center perspective-1000 lg:h-[600px] items-center">
-                
-                <!-- Phone Frame -->
-                <div class="relative w-[260px] aspect-[9/19.5] bg-slate-900 rounded-[2.5rem] p-[0.35rem] phone-frame transform rotate-2 hover:rotate-0 transition-transform duration-500 group z-10 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden">
-                    <div class="absolute inset-[0.35rem] rounded-[2.1rem] bg-black overflow-hidden">
-                        <img src="https://ppi.is-best.net/pictures/prepurchaseinspectionwebapp/IMG_8012.jpg" alt="App Dashboard" class="w-full h-full object-contain">
-                        <!-- Dynamic Island -->
-                        <div class="absolute top-2 left-1/2 -translate-x-1/2 w-[90px] h-[24px] bg-black rounded-full z-20"></div>
-                        <!-- Home Indicator -->
-                        <div class="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-[80px] h-[4px] bg-white/90 rounded-full z-20"></div>
+            <div class="relative mx-auto w-full max-w-lg lg:max-w-none flex justify-center items-center lg:h-[600px] py-12 lg:py-0">
+
+                <!-- Laptop Frame (back) -->
+                <div class="relative w-full max-w-[520px] z-0 transform lg:rotate-1 hover:rotate-0 transition-transform duration-500">
+                    <!-- Laptop body -->
+                    <div class="bg-slate-800 rounded-[14px] sm:rounded-[18px] p-[6px] sm:p-[8px] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] border border-slate-700">
+                        <!-- Screen bezel -->
+                        <div class="bg-slate-900 rounded-[8px] sm:rounded-[12px] p-[3px] sm:p-[5px] relative">
+                            <!-- Camera dot -->
+                            <div class="absolute top-1 sm:top-1.5 left-1/2 -translate-x-1/2 w-1 h-1 bg-slate-700 rounded-full z-10"></div>
+                            <!-- Screen content -->
+                            <div class="bg-white rounded-[4px] sm:rounded-[7px] overflow-hidden aspect-[16/10]">
+                                <img src="https://ppi.is-best.net/pictures/prepurchaseinspectionwebapp/desktopview.jpeg" alt="PPiPro Desktop Dashboard" class="w-full h-full object-cover object-top">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Laptop base / hinge -->
+                    <div class="relative mx-auto" style="width: 110%; margin-left: -5%;">
+                        <div class="h-[6px] sm:h-[10px] bg-gradient-to-b from-slate-700 to-slate-800 rounded-b-[6px] sm:rounded-b-[10px]"></div>
+                        <div class="h-[3px] sm:h-[4px] bg-slate-900 rounded-b-[10px] mx-[8%] shadow-md"></div>
                     </div>
                 </div>
+
+                <!-- Phone Frame (front overlap) -->
+                <div class="absolute -bottom-4 -right-2 sm:bottom-0 sm:-right-4 lg:right-0 lg:-bottom-8 w-[140px] sm:w-[170px] lg:w-[200px] aspect-[9/19.5] bg-slate-900 rounded-[1.75rem] sm:rounded-[2rem] lg:rounded-[2.25rem] p-[4px] sm:p-[5px] phone-frame transform rotate-6 hover:rotate-3 transition-transform duration-500 z-20 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.6)] overflow-hidden">
+                    <div class="absolute inset-[4px] sm:inset-[5px] rounded-[1.5rem] sm:rounded-[1.75rem] lg:rounded-[1.95rem] bg-black overflow-hidden">
+                        <img src="https://ppi.is-best.net/pictures/prepurchaseinspectionwebapp/IMG_8012.jpg" alt="App Mobile View" class="w-full h-full object-contain">
+                        <!-- Dynamic Island -->
+                        <div class="absolute top-1.5 left-1/2 -translate-x-1/2 w-[55px] sm:w-[65px] lg:w-[75px] h-[14px] sm:h-[18px] lg:h-[22px] bg-black rounded-full z-30"></div>
+                        <!-- Home Indicator -->
+                        <div class="absolute bottom-1 left-1/2 -translate-x-1/2 w-[50px] sm:w-[60px] lg:w-[70px] h-[2.5px] sm:h-[3px] bg-white/90 rounded-full z-30"></div>
+                    </div>
+                </div>
+
                 <!-- Abstract blobs -->
-                <div class="absolute top-1/4 right-0 lg:-right-10 w-72 h-72 bg-brand-400/30 blur-[64px] rounded-full mix-blend-multiply pointer-events-none"></div>
-                <div class="absolute bottom-10 -left-10 w-72 h-72 bg-blue-400/20 blur-[64px] rounded-full mix-blend-multiply pointer-events-none"></div>
+                <div class="absolute top-1/4 right-0 lg:-right-10 w-72 h-72 bg-brand-400/30 blur-[64px] rounded-full mix-blend-multiply pointer-events-none -z-10"></div>
+                <div class="absolute bottom-10 -left-10 w-72 h-72 bg-blue-400/20 blur-[64px] rounded-full mix-blend-multiply pointer-events-none -z-10"></div>
             </div>
         </div>
     </section>
