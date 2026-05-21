@@ -12,7 +12,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,800;1,9..144,700;1,9..144,800&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -20,7 +20,7 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], serif: ['"Fraunces"', 'Georgia', 'serif'] },
                     colors: {
                         brand: { 50: '#f0fdfa', 100: '#ccfbf1', 400: '#2dd4bf', 500: '#14b8a6', 600: '#0d9488', 900: '#134e4a' },
                     }
@@ -99,7 +99,7 @@
                     Professional PPI Reports <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-teal-400">in Minutes.</span>
                 </h1>
                 <p class="text-lg sm:text-xl text-slate-600 leading-relaxed mb-8 sm:mb-10 max-w-xl">
-                    Stop using paper forms. PPiPro.Click is the mobile-first platform built for inspectors who need professional PDF reports, automatic VIN decoding, and cloud storage—all in one place.
+                    Ditch the clipboard. <span class="font-serif italic font-bold text-slate-900">PPiPro<span class="text-brand-500">.Click</span></span> turns every inspection into a polished, shareable PDF — with automatic VIN decoding, integrated photos, and instant cloud delivery, all from any device in the field.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="https://script.google.com/macros/s/AKfycbwzjeKZm-Q9sCqFtwA-Y8JMT2Tpcf7MhlqyH_KBiSIB2zLAMz8o8EfGaZeaaLhMm8VXWw/exec" target="_blank" class="bg-brand-500 hover:bg-brand-600 text-white text-lg px-8 py-4 rounded-2xl font-bold text-center shadow-xl shadow-brand-500/30 transition-all duration-300 transform hover:-translate-y-1">
