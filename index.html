@@ -950,6 +950,22 @@
                             <textarea id="message" name="message" rows="5" required class="w-full px-5 py-4 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 outline-none transition-all text-slate-900 placeholder:text-slate-400 font-medium resize-none"></textarea>
                         </div>
 
+                        <!-- Anti-spam: simple sum, regenerated on every load and after each send -->
+                        <div class="space-y-2">
+                            <label for="captcha" class="block text-sm font-bold text-slate-700 ml-1">Spam check <span class="text-brand-500">*</span></label>
+                            <div class="flex flex-col sm:flex-row gap-3 sm:items-center">
+                                <div class="flex items-center gap-3 bg-slate-900 text-white rounded-xl px-5 py-4 shrink-0">
+                                    <span id="captchaQuestion" class="font-mono text-lg font-bold tracking-wider select-none" aria-hidden="true">8 + 3 = ?</span>
+                                    <button type="button" id="captchaRefresh" aria-label="Show a different question" class="text-slate-400 hover:text-brand-400 transition-colors">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                                    </button>
+                                </div>
+                                <input type="text" id="captcha" name="captcha" inputmode="numeric" autocomplete="off" required placeholder="Type the answer" aria-describedby="captchaHelp" class="w-full px-5 py-4 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 outline-none transition-all text-slate-900 placeholder:text-slate-400 font-medium">
+                            </div>
+                            <p id="captchaHelp" class="text-xs text-slate-500 font-medium ml-1">Answer the sum so we know you're not a bot.</p>
+                            <p id="captchaError" role="alert" class="hidden text-xs font-bold text-red-500 ml-1">That answer isn't right. Here's a new question — give it another try.</p>
+                        </div>
+
                         <!-- Privacy note -->
                         <div class="flex items-start gap-2 text-xs text-slate-500 font-medium pt-1">
                             <svg class="w-4 h-4 mt-0.5 flex-shrink-0 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
@@ -1047,8 +1063,48 @@
         const btnIcon = document.getElementById('btnIcon');
         const btnSpinner = document.getElementById('btnSpinner');
 
+        // ---- Anti-spam sum -------------------------------------------------
+        // A bot posting straight to the endpoint has to solve this, and the
+        // question changes on every load, after every wrong answer and after
+        // every successful send, so a captured answer is never reusable.
+        const captchaInput = document.getElementById('captcha');
+        const captchaQuestion = document.getElementById('captchaQuestion');
+        const captchaError = document.getElementById('captchaError');
+        const captchaRefresh = document.getElementById('captchaRefresh');
+        let captchaAnswer = 0;
+
+        function newCaptcha() {
+            const a = Math.floor(Math.random() * 9) + 1;   // 1-9
+            const b = Math.floor(Math.random() * 9) + 1;   // 1-9
+            captchaAnswer = a + b;
+            captchaQuestion.textContent = a + ' + ' + b + ' = ?';
+            captchaInput.setAttribute('aria-label', 'What is ' + a + ' plus ' + b + '?');
+            captchaInput.value = '';
+        }
+
+        function captchaOk() {
+            return parseInt(String(captchaInput.value).trim(), 10) === captchaAnswer;
+        }
+
+        newCaptcha();
+        captchaRefresh.addEventListener('click', () => {
+            newCaptcha();
+            captchaError.classList.add('hidden');
+            captchaInput.focus();
+        });
+        captchaInput.addEventListener('input', () => captchaError.classList.add('hidden'));
+
         form.addEventListener('submit', function(e) {
             e.preventDefault();
+
+            // Wrong sum: stop here, reset the question, and say so plainly.
+            if (!captchaOk()) {
+                newCaptcha();
+                captchaError.classList.remove('hidden');
+                captchaInput.focus();
+                return;
+            }
+            captchaError.classList.add('hidden');
 
             // Set UI to loading state
             btnText.textContent = 'Sending...';
@@ -1060,6 +1116,7 @@
             // Gather Form Data
             const formData = new FormData(form);
             const object = Object.fromEntries(formData);
+            delete object.captcha; // the sum is a gate, not something to email
             const json = JSON.stringify(object);
 
             // Send POST request using fetch
@@ -1078,6 +1135,7 @@
                     formContainer.classList.add('hidden');
                     successMessage.classList.remove('hidden');
                     form.reset();
+                    newCaptcha();
                 } else {
                     // Form API returned an error
                     console.error(response);
