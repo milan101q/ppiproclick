@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank you for your order | PPiPro.Click</title>
+    <meta name="description" content="Your PPiPro.Click order is confirmed. Your inspection web app will be ready within 48 hours.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#0A1020">
+    <link rel="canonical" href="https://ppipro.click/thankyou.html">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3crect width='24' height='24' rx='5' fill='%230A1020'/%3e%3cpath d='M6 7h12M6 12h12M6 17h7' stroke='%233355E6' stroke-width='2.2' stroke-linecap='round'/%3e%3c/svg%3e">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Inter Tight"', 'system-ui', 'sans-serif'],
+                        display: ['"Bricolage Grotesque"', '"Inter Tight"', 'sans-serif'],
+                        mono: ['"IBM Plex Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace']
+                    },
+                    colors: {
+                        ink:    { 900: '#0A1020', 800: '#111A2E', 700: '#1B2740', 600: '#2A3A57', 500: '#465A78' },
+                        cobalt: { 50: '#F1F4FF', 100: '#DDE4FF', 200: '#BCC9FF', 300: '#8FA3FB', 400: '#5B75F2', 500: '#3355E6', 600: '#1E3AC7', 700: '#172E9E' },
+                        paper:  '#EEF1F6',
+                        tag:    '#F5B301'
+                    },
+                    borderRadius: { 'sheet': '14px' }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { -webkit-font-smoothing: antialiased; }
+
+        .label {
+            font-family: "IBM Plex Mono", ui-monospace, monospace;
+            font-size: 0.6875rem;
+            font-weight: 600;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+        .stamp { box-shadow: 8px 8px 0 0 rgba(10, 16, 32, 0.07); }
+
+        .ruled {
+            background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 31px, rgba(10, 16, 32, 0.045) 31px, rgba(10, 16, 32, 0.045) 32px);
+        }
+
+        /* Signature: the receipt stamps itself onto the sheet on load */
+        .stamp-mark {
+            animation: stampIn .5s cubic-bezier(.2, .9, .3, 1.4) both;
+            animation-delay: .25s;
+        }
+        @keyframes stampIn {
+            from { opacity: 0; transform: rotate(-14deg) scale(1.5); }
+            to   { opacity: 1; transform: rotate(-8deg) scale(1); }
+        }
+
+        a:focus-visible, button:focus-visible {
+            outline: 3px solid #3355E6;
+            outline-offset: 2px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .stamp-mark { animation: none; opacity: 1; transform: rotate(-8deg); }
+        }
+    </style>
+</head>
+<body class="bg-paper text-ink-800 font-sans antialiased selection:bg-cobalt-500 selection:text-white min-h-screen flex flex-col">
+
+    <!-- ============================ NAV ============================ -->
+    <nav class="border-b border-ink-900/10 bg-paper">
+        <div class="max-w-3xl mx-auto px-5 sm:px-6 h-[68px] flex items-center justify-between gap-4">
+            <a href="/" class="flex items-center gap-2.5 shrink-0">
+                <span class="w-9 h-9 bg-ink-900 rounded-[9px] flex items-center justify-center">
+                    <svg class="w-5 h-5 text-cobalt-400" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 7h12M6 12h12M6 17h7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+                </span>
+                <span class="font-display font-extrabold text-[1.35rem] tracking-[-0.02em] text-ink-900 leading-none">
+                    PPiPro<span class="text-cobalt-500">.</span><span class="label text-ink-600 align-middle ml-0.5">Click</span>
+                </span>
+            </a>
+            <a href="https://wa.me/17373492749" target="_blank" rel="noopener" class="label text-emerald-600 hover:text-emerald-700 transition-colors">WhatsApp us</a>
+        </div>
+    </nav>
+
+    <main class="flex-1 relative overflow-hidden">
+        <div class="absolute inset-x-0 top-0 h-[420px] ruled pointer-events-none opacity-70"></div>
+
+        <div class="max-w-3xl mx-auto px-5 sm:px-6 py-14 sm:py-20 relative">
+
+            <!-- The order sheet -->
+            <div class="bg-white border-2 border-ink-900 rounded-sheet stamp overflow-hidden">
+
+                <div class="flex items-center justify-between gap-4 px-6 sm:px-9 py-3.5 bg-ink-900">
+                    <span class="label text-white/50">Order confirmation</span>
+                    <span class="label text-cobalt-300">PPiPro.Click</span>
+                </div>
+
+                <div class="px-6 sm:px-9 py-9 sm:py-11 relative">
+
+                    <!-- Signature element: paid stamp -->
+                    <span class="stamp-mark absolute top-6 right-5 sm:right-8 border-[3px] border-emerald-500/70 text-emerald-600 rounded-md px-3 py-1.5 label leading-none select-none pointer-events-none" style="transform: rotate(-8deg);">
+                        Order received
+                    </span>
+
+                    <svg class="w-14 h-14 text-emerald-500 mb-6" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M7.75 12l2.83 2.83 5.67-5.66" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+                    <h1 class="font-display font-extrabold text-ink-900 text-[2.1rem] sm:text-[2.8rem] leading-[1.02] tracking-[-0.03em] mb-5">
+                        Thank you for your order.
+                    </h1>
+
+                    <p class="text-lg text-ink-600 leading-relaxed max-w-xl">
+                        We received your order. Your inspection web app will be ready within <strong class="text-ink-900 font-semibold">48 hours</strong>. Your payment receipt is on its way to the email address you used at checkout.
+                    </p>
+
+                    <!-- What happens next: a real sequence, so it is numbered -->
+                    <div class="mt-10 border-t border-ink-900/10 pt-8">
+                        <h2 class="label text-ink-900 mb-6">What happens next</h2>
+                        <ol class="space-y-6">
+                            <li class="flex gap-4">
+                                <span class="label text-cobalt-600 pt-1 shrink-0 w-6">01</span>
+                                <div>
+                                    <h3 class="font-semibold text-ink-900">We build your deployment</h3>
+                                    <p class="text-ink-600 leading-relaxed mt-1">Your own copy of the app goes up with your business name, logo, address, phone and disclaimer on the report letterhead.</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4">
+                                <span class="label text-cobalt-600 pt-1 shrink-0 w-6">02</span>
+                                <div>
+                                    <h3 class="font-semibold text-ink-900">We email you the link</h3>
+                                    <p class="text-ink-600 leading-relaxed mt-1">Within 48 hours you get the web app link and a short walkthrough. Nothing to install &mdash; it opens in any browser, on the phone in the bay or the desktop at the office.</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4">
+                                <span class="label text-cobalt-600 pt-1 shrink-0 w-6">03</span>
+                                <div>
+                                    <h3 class="font-semibold text-ink-900">You run your first inspection</h3>
+                                    <p class="text-ink-600 leading-relaxed mt-1">Decode a VIN, work the checklist, shoot the photos, and text the finished PDF before you leave the lot.</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <!-- Branding details we need -->
+                    <div class="mt-9 bg-paper border border-ink-900/10 rounded-sheet px-5 sm:px-6 py-5">
+                        <h2 class="label text-ink-900 mb-3">Speed it up</h2>
+                        <p class="text-ink-600 leading-relaxed">Send us your business name, logo, address, phone and website by email or WhatsApp and we&rsquo;ll have your branding on the reports from the first one you run.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="mt-8">
+                <h2 class="label text-ink-900 mb-4">For more information, get in touch</h2>
+                <div class="grid sm:grid-cols-2 gap-3">
+                    <a href="mailto:Flowcetra@gmail.com?subject=My%20PPiPro%20order" class="group flex items-center gap-4 bg-white border border-ink-900/10 hover:border-cobalt-500 rounded-sheet px-5 py-4 transition-colors">
+                        <span class="w-11 h-11 rounded-lg bg-cobalt-500 text-white flex items-center justify-center shrink-0">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 7l8.5 6 8.5-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </span>
+                        <span class="min-w-0">
+                            <span class="block label text-ink-600/70 mb-1">Email</span>
+                            <span class="block font-semibold text-ink-900 truncate">Flowcetra@gmail.com</span>
+                        </span>
+                    </a>
+
+                    <a href="https://wa.me/17373492749" target="_blank" rel="noopener" class="group flex items-center gap-4 bg-white border border-ink-900/10 hover:border-emerald-500 rounded-sheet px-5 py-4 transition-colors">
+                        <span class="w-11 h-11 rounded-lg bg-emerald-500 text-white flex items-center justify-center shrink-0">
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.02h-.01c-1.5 0-2.97-.4-4.25-1.16l-.3-.18-3.16.83.85-3.08-.2-.32a8.22 8.22 0 01-1.26-4.2c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.41a8.18 8.18 0 012.41 5.83c0 4.54-3.7 8.23-8.14 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.07-.25-.13-.94-.35-1.79-1.11-.66-.59-1.11-1.31-1.24-1.56-.13-.25-.01-.39.11-.51.11-.11.25-.29.37-.44.12-.14.16-.25.25-.41.08-.17.04-.31-.03-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.42.06-.64.31-.22.25-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.17 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.52.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.47-.28z"/></svg>
+                        </span>
+                        <span class="min-w-0">
+                            <span class="block label text-ink-600/70 mb-1">WhatsApp</span>
+                            <span class="block font-semibold text-ink-900">+1 (737) 349-2749</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-8 flex flex-col sm:flex-row gap-3">
+                <a href="https://script.google.com/macros/s/AKfycbxN-6FX03zsP7oT11PZrxdrlCJY2TLbKXYty4XuOGc8a7dV3z9ALByb4JFRuIu6Il-e/exec" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-ink-900 hover:bg-cobalt-600 text-white px-7 py-4 rounded-lg font-semibold transition-colors">
+                    Try the app while you wait
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13m0 0l-5-5m5 5l-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+                <a href="/" class="inline-flex items-center justify-center bg-white border border-ink-900/15 hover:border-ink-900/40 text-ink-800 px-7 py-4 rounded-lg font-semibold transition-colors">
+                    Back to PPiPro.Click
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- ============================ FOOTER ============================ -->
+    <footer class="bg-ink-900 text-white/50 border-t border-white/10">
+        <div class="max-w-3xl mx-auto px-5 sm:px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-5 text-center md:text-left">
+            <div class="flex items-center gap-3">
+                <span class="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center">
+                    <svg class="w-4 h-4 text-cobalt-300" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 7h12M6 12h12M6 17h7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+                </span>
+                <span class="font-display font-extrabold text-lg text-white tracking-[-0.02em] leading-none">PPiPro<span class="text-cobalt-400">.</span><span class="label text-white/50 ml-0.5">Click</span></span>
+            </div>
+            <p class="text-sm md:text-right">&copy; 2026 PPiPro.Click<br class="hidden md:block">
+                <span class="label text-white/40">Powered by Web App Solutions LLC</span>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
