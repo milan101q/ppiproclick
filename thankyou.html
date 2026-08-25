@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth" data-plan="solo">
 <head>
     <meta charset="UTF-8">
+    <!-- Which package was ordered. Set before any painting so the wrong price never flashes.
+         The order form appends ?plan=solo or ?plan=team to its redirect; anything else falls back to solo. -->
+    <script>
+        (function () {
+            try {
+                var p = new URLSearchParams(window.location.search).get('plan');
+                document.documentElement.setAttribute('data-plan', p === 'team' ? 'team' : 'solo');
+            } catch (e) { /* leave the solo default in place */ }
+        })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thank you for your order | PPiPro.Click</title>
-    <meta name="description" content="Your PPiPro.Click order is confirmed. Your inspection web app will be ready within 48 hours.">
+    <meta name="description" content="Your PPiPro.Click order is confirmed. Complete the one-time payment and your inspection web app will be ready within 48 hours.">
     <meta name="robots" content="noindex, nofollow">
     <meta name="theme-color" content="#0A1020">
     <link rel="canonical" href="https://ppipro.click/thankyou.html">
@@ -51,6 +61,11 @@
             text-transform: uppercase;
         }
         .stamp { box-shadow: 8px 8px 0 0 rgba(10, 16, 32, 0.07); }
+
+        /* Package variants: only the ordered one is shown. Specificity beats Tailwind's
+           display utilities, so a shown element keeps its own flex/block class. */
+        html[data-plan="solo"] .plan-team { display: none; }
+        html[data-plan="team"] .plan-solo { display: none; }
 
         .ruled {
             background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 31px, rgba(10, 16, 32, 0.045) 31px, rgba(10, 16, 32, 0.045) 32px);
@@ -130,17 +145,32 @@
                             <div>
                                 <p class="label text-cobalt-300">Amount due</p>
                                 <div class="mt-2 flex items-end gap-2">
-                                    <span class="font-display font-extrabold text-white text-5xl tracking-[-0.04em]">$499</span>
+                                    <span class="plan-solo font-display font-extrabold text-white text-5xl tracking-[-0.04em]">$499</span>
+                                    <span class="plan-team font-display font-extrabold text-white text-5xl tracking-[-0.04em]">$799</span>
                                     <span class="text-white/50 font-medium pb-1.5">once</span>
                                 </div>
+                                <p class="label text-white/40 mt-3">
+                                    <span class="plan-solo">Solo package &middot; one inspector</span>
+                                    <span class="plan-team">Team package &middot; unlimited inspectors</span>
+                                </p>
                             </div>
                             <p class="label text-white/40 leading-relaxed max-w-[15rem]">No subscription &middot; No per-report fees</p>
                         </div>
-                        <a href="https://buy.stripe.com/14A14naGw0gGaaU98t04800" class="flex items-center justify-center gap-2 w-full bg-cobalt-500 hover:bg-cobalt-400 text-white px-6 py-4 rounded-lg font-semibold text-base transition-colors">
+
+                        <a href="https://buy.stripe.com/14A14naGw0gGaaU98t04800" class="plan-solo flex items-center justify-center gap-2 w-full bg-cobalt-500 hover:bg-cobalt-400 text-white px-6 py-4 rounded-lg font-semibold text-base transition-colors">
                             Pay Now &mdash; $499
                             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13m0 0l-5-5m5 5l-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </a>
+                        <a href="https://buy.stripe.com/bJe14naGwfbAaaUesN04802" class="plan-team flex items-center justify-center gap-2 w-full bg-cobalt-500 hover:bg-cobalt-400 text-white px-6 py-4 rounded-lg font-semibold text-base transition-colors">
+                            Pay Now &mdash; $799
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13m0 0l-5-5m5 5l-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+
                         <p class="label text-white/40 text-center mt-4">Secure checkout by Stripe</p>
+                        <p class="text-xs text-white/40 text-center mt-3 leading-relaxed">
+                            <span class="plan-solo">Ordered the Team package? <a href="?plan=team" class="text-cobalt-300 hover:text-cobalt-200 underline underline-offset-2">Pay $799 instead</a></span>
+                            <span class="plan-team">Ordered the Solo package? <a href="?plan=solo" class="text-cobalt-300 hover:text-cobalt-200 underline underline-offset-2">Pay $499 instead</a></span>
+                        </p>
                     </div>
 
                     <!-- What happens next: a real sequence, so it is numbered -->
@@ -151,7 +181,7 @@
                                 <span class="label text-cobalt-600 pt-1 shrink-0 w-6">01</span>
                                 <div>
                                     <h3 class="font-semibold text-ink-900">We build your deployment</h3>
-                                    <p class="text-ink-600 leading-relaxed mt-1">Your own copy of the app goes up with your business name, logo, address, phone and disclaimer on the report letterhead.</p>
+                                    <p class="text-ink-600 leading-relaxed mt-1">Your own copy of the app goes up with your business name, logo, address, phone and disclaimer on the report letterhead.<span class="plan-team"> Your admin account is created at the same time, so you can approve inspectors from the first login.</span></p>
                                 </div>
                             </li>
                             <li class="flex gap-4">
@@ -165,7 +195,7 @@
                                 <span class="label text-cobalt-600 pt-1 shrink-0 w-6">03</span>
                                 <div>
                                     <h3 class="font-semibold text-ink-900">You run your first inspection</h3>
-                                    <p class="text-ink-600 leading-relaxed mt-1">Decode a VIN, work the checklist, shoot the photos, and text the finished PDF before you leave the lot.</p>
+                                    <p class="text-ink-600 leading-relaxed mt-1">Decode a VIN, work the checklist, shoot the photos, and text the finished PDF before you leave the lot.<span class="plan-team"> Then send your inspectors the same link &mdash; they sign themselves up and wait in your approval queue.</span></p>
                                 </div>
                             </li>
                         </ol>
