@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pre-Purchase Inspection Web App &amp; PPI Report App | PPiPro</title>
-    <meta name="description" content="Pre-purchase inspection web app for dealers, mechanics and inspectors. Run a PPI from any device and text the customer a branded PDF report. $499 once, no subscription.">
-    <meta name="keywords" content="pre-purchase inspection webapp, PPI report app, vehicle inspection app, mobile vehicle inspection, editable inspection checklist, PDF inspection report, VIN decoder, dealer inspection web app, vehicle appraisal web app">
+    <meta name="description" content="Pre-purchase inspection web app for dealers, mechanics and inspectors. Run a PPI from any device and text the customer a branded PDF report. Solo $499, Team $799 &mdash; one time, no subscription.">
+    <meta name="keywords" content="pre-purchase inspection webapp, PPI report app, vehicle inspection app, mobile vehicle inspection, editable inspection checklist, PDF inspection report, VIN decoder, dealer inspection web app, vehicle appraisal web app, multi inspector inspection app, team vehicle inspection web app, inspection app with admin approval">
     <meta name="author" content="PPiPro.Click">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#0A1020">
@@ -25,7 +25,7 @@
     <meta property="og:site_name" content="PPiPro.Click">
     <meta property="og:url" content="https://ppipro.click/">
     <meta property="og:title" content="Pre-Purchase Inspection Web App for Dealers &amp; Inspectors | PPiPro.Click">
-    <meta property="og:description" content="Run a full pre-purchase inspection from any device and hand the customer a branded PDF before you leave the lot. Six report types. One-time $499 purchase.">
+    <meta property="og:description" content="Run a full pre-purchase inspection from any device and hand the customer a branded PDF before you leave the lot. Six report types. One-time purchase &mdash; $499 for a single inspector, $799 for a team with admin oversight.">
     <meta property="og:image" content="https://ppi.is-best.net/pictures/prepurchaseinspectionwebapp/ppisample1.jpeg">
     <meta property="og:image:alt" content="Sample PPiPro.Click pre-purchase inspection PDF report">
     <meta property="og:image:width" content="1200">
@@ -35,7 +35,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Pre-Purchase Inspection Web App for Dealers &amp; Inspectors | PPiPro.Click">
-    <meta name="twitter:description" content="A complete inspection on any device, photos embedded as you shoot them, and a branded PDF delivered on the spot.">
+    <meta name="twitter:description" content="A complete inspection on any device, photos embedded as you shoot them, and a branded PDF delivered on the spot. Solo or whole-team plans.">
     <meta name="twitter:image" content="https://ppi.is-best.net/pictures/prepurchaseinspectionwebapp/ppisample1.jpeg">
     <meta name="twitter:image:alt" content="Sample PPiPro.Click pre-purchase inspection PDF report">
 
@@ -64,14 +64,37 @@
         "Supporting documents: append up to 20 PDFs or screenshots to the back of the report",
         "Searchable report history, auto-saved drafts, and one-tap cloning of a past report",
         "Six report types: Pre-Purchase Inspection, plus Total Loss, Diminished Value, Classic Vehicle, Auction Arbitration and Finance appraisals",
-        "Optional comparable-listing research for appraisal reports, with every link verified before it prints"
+        "Optional comparable-listing research for appraisal reports, with every link verified before it prints",
+        "Team plan: a separate login and private dashboard for every inspector, with reports signed in their own name",
+        "Team plan: new inspectors sign themselves up and stay locked out until the admin approves them",
+        "Team plan: admin oversight of every inspector's reports, with reassignment, password resets and access removal"
       ],
       "offers": {
-        "@type": "Offer",
-        "price": "499",
+        "@type": "AggregateOffer",
         "priceCurrency": "USD",
-        "category": "One-time purchase",
-        "availability": "https://schema.org/InStock"
+        "lowPrice": "499",
+        "highPrice": "799",
+        "offerCount": "2",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Solo",
+            "description": "One inspector, one login. The complete web app on your own Google account.",
+            "price": "499",
+            "priceCurrency": "USD",
+            "category": "One-time purchase",
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "name": "Team",
+            "description": "Unlimited inspectors, each with their own login and dashboard, plus an admin who approves new inspectors and sees every report.",
+            "price": "799",
+            "priceCurrency": "USD",
+            "category": "One-time purchase",
+            "availability": "https://schema.org/InStock"
+          }
+        ]
       },
       "publisher": {
         "@type": "Organization",
@@ -103,7 +126,22 @@
         {
           "@type": "Question",
           "name": "Is this a subscription?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No. $499 once, and the platform is yours. There is no monthly fee, no per-report fee and no seat licensing — put as many inspectors on it as you like." }
+          "acceptedAnswer": { "@type": "Answer", "text": "No. You pay once and the platform is yours: $499 for Solo, $799 for Team. There is no monthly fee, no per-report fee, and no per-inspector charge on Team no matter how many inspectors you add." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between Solo and Team?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Solo is one inspector working under one login. Team is the same app with accounts: every inspector gets their own login and their own dashboard showing only their drafts, reports and history, and reports are signed in the name of whoever ran them. Team also gives you an admin account that approves new inspectors, sees every report from every inspector, reassigns a report to the right person, resets a password and removes access. Every feature of the app itself is in both plans." }
+        },
+        {
+          "@type": "Question",
+          "name": "How does approving a new inspector work?",
+          "acceptedAnswer": { "@type": "Answer", "text": "On the Team plan an inspector signs themselves up with their name, phone, email, a username and the name that should sign their reports. The account is created but stays pending, so they cannot open the app or file anything. It appears in your admin screen, and one tap approves them. You can also reset an inspector's password or remove their access at any time, which ends their live sessions immediately." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I move from Solo to Team later?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Message us and pay the $300 difference and we upgrade your deployment in place. Your existing reports, drafts, settings and checklist all stay where they are, and any report filed before the upgrade is assigned to you as the admin." }
         },
         {
           "@type": "Question",
@@ -203,10 +241,10 @@
       "@type": "VideoObject",
       "name": "PPiPro.Click walkthrough: a full pre-purchase inspection, start to finished PDF",
       "description": "A walkthrough of the PPiPro.Click pre-purchase inspection app, from decoding the VIN through the checklist, condition grid and photos to the delivered PDF report.",
-      "thumbnailUrl": "https://i.ytimg.com/vi/QDCL0YqkrXo/maxresdefault.jpg",
+      "thumbnailUrl": "https://i.ytimg.com/vi/45gqw5_hm7E/maxresdefault.jpg",
       "uploadDate": "2025-11-01",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/QDCL0YqkrXo",
-      "contentUrl": "https://www.youtube.com/watch?v=QDCL0YqkrXo",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/45gqw5_hm7E",
+      "contentUrl": "https://www.youtube.com/watch?v=45gqw5_hm7E",
       "publisher": {
         "@type": "Organization",
         "name": "Web App Solutions LLC",
@@ -270,6 +308,11 @@
             background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 31px, rgba(255, 255, 255, 0.05) 31px, rgba(255, 255, 255, 0.05) 32px);
         }
 
+        /* Order form package cards — selected state, so it does not rely on runtime class generation */
+        .plan-opt.is-picked { border-color: #3355E6; background: #F1F4FF; }
+        .plan-opt.is-picked .plan-check { display: flex; }
+        .plan-opt:focus-within { outline: 3px solid #3355E6; outline-offset: 2px; }
+
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
@@ -321,6 +364,7 @@
                 <a href="#report" class="hover:text-cobalt-600 transition-colors">The report</a>
                 <a href="#types" class="hover:text-cobalt-600 transition-colors">Report types</a>
                 <a href="#pricing" class="hover:text-cobalt-600 transition-colors">Pricing</a>
+                <a href="#team" class="hover:text-cobalt-600 transition-colors">For teams</a>
                 <a href="#order" class="hover:text-cobalt-600 transition-colors">Order</a>
                 <a href="#contact" class="hover:text-cobalt-600 transition-colors">Contact</a>
             </div>
@@ -347,6 +391,7 @@
                 <a href="#types" class="py-3 border-b border-ink-900/10">Report types</a>
                 <a href="#field" class="py-3 border-b border-ink-900/10">See it in the field</a>
                 <a href="#pricing" class="py-3 border-b border-ink-900/10">Pricing</a>
+                <a href="#team" class="py-3 border-b border-ink-900/10">For teams</a>
                 <a href="#order" class="py-3 border-b border-ink-900/10">Order</a>
                 <a href="#faq" class="py-3 border-b border-ink-900/10">FAQ</a>
                 <a href="#contact" class="py-3 border-b border-ink-900/10">Contact</a>
@@ -406,8 +451,8 @@
                         <span class="flex-1 font-mono text-[11px] text-white/50 bg-white/10 rounded px-3 py-1 truncate">ppipro.click</span>
                     </div>
                     <div class="aspect-video bg-black">
-                        <button type="button" class="yt-lite group w-full h-full relative block" data-yt="QDCL0YqkrXo" data-title="PPiPro.Click walkthrough: a full pre-purchase inspection, start to finished PDF" aria-label="Play the PPiPro.Click walkthrough video">
-                            <img src="https://i.ytimg.com/vi/QDCL0YqkrXo/maxresdefault.jpg" alt="Walkthrough video: running a pre-purchase inspection in PPiPro.Click and sending the finished PDF report" width="1280" height="720" fetchpriority="high" decoding="async" class="w-full h-full object-cover">
+                        <button type="button" class="yt-lite group w-full h-full relative block" data-yt="45gqw5_hm7E" data-title="PPiPro.Click walkthrough: a full pre-purchase inspection, start to finished PDF" aria-label="Play the PPiPro.Click walkthrough video">
+                            <img src="https://i.ytimg.com/vi/45gqw5_hm7E/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/45gqw5_hm7E/hqdefault.jpg';" alt="Walkthrough video: running a pre-purchase inspection in PPiPro.Click and sending the finished PDF report" width="1280" height="720" fetchpriority="high" decoding="async" class="w-full h-full object-cover">
                             <span class="absolute inset-0 flex items-center justify-center bg-ink-900/25 group-hover:bg-ink-900/10 transition-colors">
                                 <span class="w-16 h-11 rounded-lg bg-ink-900/85 group-hover:bg-cobalt-500 flex items-center justify-center transition-colors">
                                     <svg class="w-6 h-6 text-white ml-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
@@ -429,7 +474,7 @@
     <section class="border-y border-ink-900/10 bg-white">
         <div class="max-w-6xl mx-auto px-5 sm:px-6 py-5 flex flex-wrap items-center gap-x-8 gap-y-2">
             <p class="label text-ink-600/70">Built for</p>
-            <p class="text-sm font-medium text-ink-700">Independent inspectors &middot; Dealers and trade walkarounds &middot; Mobile mechanics &middot; Appraisers</p>
+            <p class="text-sm font-medium text-ink-700">Independent inspectors &middot; Multi-inspector shops &middot; Dealers and trade walkarounds &middot; Mobile mechanics &middot; Appraisers</p>
         </div>
     </section>
 
@@ -774,47 +819,143 @@
             <div class="max-w-2xl mb-12 reveal">
                 <p class="label text-cobalt-600 mb-4">Pricing</p>
                 <h2 class="font-display font-extrabold text-ink-900 text-[2.1rem] sm:text-[2.7rem] leading-[1.03] tracking-[-0.03em]">Buy it once. Use it forever.</h2>
-                <p class="text-lg text-ink-600 mt-5 leading-relaxed">One platform fee, deployed on your own Google account. No per-report charge, no seat licensing, no renewal notice next year.</p>
+                <p class="text-lg text-ink-600 mt-5 leading-relaxed">Two packages, both a single payment, both deployed on your own Google account. Work alone or put your whole crew on it &mdash; either way there is no per-report charge and no renewal notice next year.</p>
             </div>
 
-            <div class="grid lg:grid-cols-[1fr_1.3fr] gap-6 items-stretch reveal">
-                <div class="bg-ink-900 text-white rounded-sheet p-8 sm:p-10 flex flex-col">
-                    <p class="label text-cobalt-300">One-time purchase</p>
-                    <div class="mt-5 flex items-end gap-2">
-                        <span class="font-display font-extrabold text-6xl tracking-[-0.04em]">$499</span>
-                        <span class="text-white/50 font-medium pb-2">once</span>
+            <div class="grid md:grid-cols-2 gap-6 items-stretch reveal">
+
+                <!-- SOLO -->
+                <div class="bg-white border-2 border-ink-900 rounded-sheet stamp p-8 sm:p-10 flex flex-col">
+                    <div class="flex items-baseline justify-between gap-3">
+                        <h3 class="font-display font-extrabold text-ink-900 text-2xl tracking-[-0.02em]">Solo</h3>
+                        <span class="label text-ink-600/70">One inspector</span>
                     </div>
-                    <ul class="mt-8 space-y-3 text-sm text-white/80 font-medium">
-                        <li class="flex gap-2.5"><span class="text-cobalt-300">&#10003;</span>No monthly subscription</li>
-                        <li class="flex gap-2.5"><span class="text-cobalt-300">&#10003;</span>No per-report or per-seat fees</li>
-                        <li class="flex gap-2.5"><span class="text-cobalt-300">&#10003;</span>Unlimited inspectors on one deployment</li>
-                        <li class="flex gap-2.5"><span class="text-cobalt-300">&#10003;</span>Your reports stay in your Drive</li>
+                    <p class="text-sm text-ink-600 mt-3 leading-relaxed">For the independent inspector, appraiser or mobile mechanic who signs every report themselves.</p>
+                    <div class="mt-7 flex items-end gap-2">
+                        <span class="font-display font-extrabold text-ink-900 text-6xl tracking-[-0.04em]">$499</span>
+                        <span class="text-ink-600/60 font-medium pb-2">once</span>
+                    </div>
+                    <ul class="mt-8 space-y-3 text-sm text-ink-700 font-medium">
+                        <li class="flex gap-2.5"><span class="text-cobalt-500 shrink-0">&#10003;</span>One login, one dashboard</li>
+                        <li class="flex gap-2.5"><span class="text-cobalt-500 shrink-0">&#10003;</span>Every report type and every feature below</li>
+                        <li class="flex gap-2.5"><span class="text-cobalt-500 shrink-0">&#10003;</span>Your branding on every page</li>
+                        <li class="flex gap-2.5"><span class="text-cobalt-500 shrink-0">&#10003;</span>Reports stay in your own Drive</li>
+                        <li class="flex gap-2.5"><span class="text-cobalt-500 shrink-0">&#10003;</span>No subscription, no per-report fee</li>
                     </ul>
-                    <div class="mt-auto pt-9 space-y-3">
-                        <a href="#order" class="flex items-center justify-center gap-2 w-full bg-cobalt-500 hover:bg-cobalt-400 text-white px-6 py-4 rounded-lg font-semibold transition-colors">
-                            Order Now
+                    <div class="mt-auto pt-9">
+                        <a href="#order" data-plan="solo" class="flex items-center justify-center gap-2 w-full bg-ink-900 hover:bg-cobalt-600 text-white px-6 py-4 rounded-lg font-semibold transition-colors">
+                            Order Solo
                             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13m0 0l-5-5m5 5l-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </a>
-                        <a href="https://script.google.com/macros/s/AKfycbxN-6FX03zsP7oT11PZrxdrlCJY2TLbKXYty4XuOGc8a7dV3z9ALByb4JFRuIu6Il-e/exec" target="_blank" rel="noopener" class="flex items-center justify-center w-full border border-white/25 hover:bg-white/10 text-white px-6 py-4 rounded-lg font-semibold transition-colors">Try it free first</a>
-                        <p class="label text-white/45 text-center pt-1 leading-relaxed">Your app is set up within 48 hours &middot; <a href="#contact" class="text-cobalt-300 hover:text-cobalt-200 underline underline-offset-2">Ask a question first</a></p>
                     </div>
                 </div>
 
-                <div class="bg-white border border-ink-900/10 rounded-sheet p-8 sm:p-10">
-                    <h3 class="label text-ink-900 mb-6">Everything included</h3>
-                    <ul class="grid sm:grid-cols-2 gap-x-10 gap-y-3 text-sm font-medium text-ink-700">
-                        <li class="flex gap-2.5"><span class="text-cobalt-500">&#10003;</span>Editable inspection checklist</li>
-                        <li class="flex gap-2.5"><span class="text-cobalt-500">&#10003;</span>Six-level condition rating grid</li>
-                        <li class="flex gap-2.5"><span class="text-cobalt-500">&#10003;</span>Captioned, auto-compressed photos</li>
-                        <li class="flex gap-2.5"><span class="text-cobalt-500">&#10003;</span>Options schedule and rich-text notes</li>
-                        <li class="flex gap-2.5"><span class="text-cobalt-500">&#10003;</span>White-label letterhead and About page</li>
-                        <li class="flex gap-2.5"><span class="text-cobalt-500">&#10003;</span>Supporting document attachments</li>
-                        <li class="flex gap-2.5"><span class="text-cobalt-500">&#10003;</span>Drive storage, share links, instant PDFs</li>
-                        <li class="flex gap-2.5"><span class="text-cobalt-500">&#10003;</span>Drafts, searchable history, cloning</li>
-                        <li class="flex gap-2.5"><span class="text-cobalt-500">&#10003;</span>All six report types</li>
-                        <li class="flex gap-2.5"><span class="text-cobalt-500">&#10003;</span>Optional comparable research</li>
-                    </ul>
-                    <p class="text-sm text-ink-600 mt-8 pt-6 border-t border-ink-900/10 leading-relaxed">Deployed on your own Google account, so the reports, the photos and the log stay under your login from day one.</p>
+                <!-- TEAM -->
+                <div class="bg-ink-900 text-white rounded-sheet stamp p-8 sm:p-10 flex flex-col relative overflow-hidden">
+                    <div class="absolute inset-0 ruled-dark opacity-40 pointer-events-none"></div>
+                    <div class="relative flex flex-col h-full">
+                        <div class="flex items-baseline justify-between gap-3">
+                            <h3 class="font-display font-extrabold text-2xl tracking-[-0.02em]">Team</h3>
+                            <span class="label text-ink-900 bg-tag rounded px-2 py-1">Admin + crew</span>
+                        </div>
+                        <p class="text-sm text-white/65 mt-3 leading-relaxed">For a shop or network running several inspectors, where one person needs to see all of it.</p>
+                        <div class="mt-7 flex items-end gap-2">
+                            <span class="font-display font-extrabold text-6xl tracking-[-0.04em]">$799</span>
+                            <span class="text-white/50 font-medium pb-2">once</span>
+                        </div>
+                        <ul class="mt-8 space-y-3 text-sm text-white/85 font-medium">
+                            <li class="flex gap-2.5"><span class="text-cobalt-300 shrink-0">&#10003;</span>Everything in Solo</li>
+                            <li class="flex gap-2.5"><span class="text-cobalt-300 shrink-0">&#10003;</span>A separate login and private dashboard for each inspector</li>
+                            <li class="flex gap-2.5"><span class="text-cobalt-300 shrink-0">&#10003;</span>New inspectors sign themselves up and wait for your approval</li>
+                            <li class="flex gap-2.5"><span class="text-cobalt-300 shrink-0">&#10003;</span>Admin sees, opens and reassigns every inspector&rsquo;s reports</li>
+                            <li class="flex gap-2.5"><span class="text-cobalt-300 shrink-0">&#10003;</span>Reset a password or pull access in one tap</li>
+                            <li class="flex gap-2.5"><span class="text-cobalt-300 shrink-0">&#10003;</span>Each report signed in the inspector&rsquo;s own name</li>
+                            <li class="flex gap-2.5"><span class="text-cobalt-300 shrink-0">&#10003;</span>Unlimited inspectors &mdash; the price does not change</li>
+                        </ul>
+                        <div class="mt-auto pt-9">
+                            <a href="#order" data-plan="team" class="flex items-center justify-center gap-2 w-full bg-cobalt-500 hover:bg-cobalt-400 text-white px-6 py-4 rounded-lg font-semibold transition-colors">
+                                Order Team
+                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13m0 0l-5-5m5 5l-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-center label text-ink-600/70 mt-7 leading-relaxed reveal">Set up within 48 hours &middot; <a href="https://script.google.com/macros/s/AKfycbxN-6FX03zsP7oT11PZrxdrlCJY2TLbKXYty4XuOGc8a7dV3z9ALByb4JFRuIu6Il-e/exec" target="_blank" rel="noopener" class="text-cobalt-600 hover:text-cobalt-700 underline underline-offset-2">Try it free first</a> &middot; <a href="#contact" class="text-cobalt-600 hover:text-cobalt-700 underline underline-offset-2">Ask a question</a></p>
+
+            <!-- Shared feature list -->
+            <div class="bg-white border border-ink-900/10 rounded-sheet p-8 sm:p-10 mt-8 reveal">
+                <h3 class="label text-ink-900 mb-6">In both packages</h3>
+                <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-3 text-sm font-medium text-ink-700">
+                    <li class="flex gap-2.5"><span class="text-cobalt-500 shrink-0">&#10003;</span>Editable inspection checklist</li>
+                    <li class="flex gap-2.5"><span class="text-cobalt-500 shrink-0">&#10003;</span>Six-level condition rating grid</li>
+                    <li class="flex gap-2.5"><span class="text-cobalt-500 shrink-0">&#10003;</span>Captioned, auto-compressed photos</li>
+                    <li class="flex gap-2.5"><span class="text-cobalt-500 shrink-0">&#10003;</span>Options schedule and rich-text notes</li>
+                    <li class="flex gap-2.5"><span class="text-cobalt-500 shrink-0">&#10003;</span>White-label letterhead and About page</li>
+                    <li class="flex gap-2.5"><span class="text-cobalt-500 shrink-0">&#10003;</span>Supporting document attachments</li>
+                    <li class="flex gap-2.5"><span class="text-cobalt-500 shrink-0">&#10003;</span>Drive storage, share links, instant PDFs</li>
+                    <li class="flex gap-2.5"><span class="text-cobalt-500 shrink-0">&#10003;</span>Drafts, searchable history, cloning</li>
+                    <li class="flex gap-2.5"><span class="text-cobalt-500 shrink-0">&#10003;</span>All six report types</li>
+                    <li class="flex gap-2.5"><span class="text-cobalt-500 shrink-0">&#10003;</span>Optional comparable research</li>
+                    <li class="flex gap-2.5"><span class="text-cobalt-500 shrink-0">&#10003;</span>VIN decoding from the NHTSA database</li>
+                    <li class="flex gap-2.5"><span class="text-cobalt-500 shrink-0">&#10003;</span>Same app on phone, tablet and desktop</li>
+                </ul>
+                <p class="text-sm text-ink-600 mt-8 pt-6 border-t border-ink-900/10 leading-relaxed">Deployed on your own Google account, so the reports, the photos and the log stay under your login from day one.</p>
+            </div>
+
+            <!-- How the Team package works -->
+            <div id="team" class="mt-8 reveal scroll-mt-24">
+                <div class="bg-white border-2 border-ink-900 rounded-sheet stamp-sm overflow-hidden">
+                    <div class="flex items-center justify-between gap-4 px-6 sm:px-9 py-3.5 bg-ink-900">
+                        <span class="label text-white/50">Team package</span>
+                        <span class="label text-cobalt-300">How accounts work</span>
+                    </div>
+                    <div class="px-6 sm:px-9 py-8 sm:py-10">
+                        <h3 class="font-display font-extrabold text-ink-900 text-[1.6rem] sm:text-[1.9rem] leading-[1.1] tracking-[-0.02em]">Nobody files a report until you say so.</h3>
+                        <p class="text-ink-600 mt-4 leading-relaxed max-w-2xl">Team turns the app into an account system with you at the top. Inspectors join themselves, you decide who is in, and each of them works in a dashboard of their own.</p>
+
+                        <ol class="grid md:grid-cols-3 gap-x-8 gap-y-8 mt-9">
+                            <li>
+                                <p class="label text-cobalt-600">Step 01</p>
+                                <h4 class="font-semibold text-ink-900 mt-2.5">You get the admin login</h4>
+                                <p class="text-sm text-ink-600 mt-2 leading-relaxed">Created with your deployment. It is the only account that exists on day one, and the only one that can approve anybody else.</p>
+                            </li>
+                            <li>
+                                <p class="label text-cobalt-600">Step 02</p>
+                                <h4 class="font-semibold text-ink-900 mt-2.5">Your inspectors sign themselves up</h4>
+                                <p class="text-sm text-ink-600 mt-2 leading-relaxed">Name, phone, email, a username of their own and the name that should sign their reports. You are not creating accounts by hand or handing round a shared password.</p>
+                            </li>
+                            <li>
+                                <p class="label text-cobalt-600">Step 03</p>
+                                <h4 class="font-semibold text-ink-900 mt-2.5">You approve them</h4>
+                                <p class="text-sm text-ink-600 mt-2 leading-relaxed">Until you do, the account is pending and locked out &mdash; they cannot open the app or start an inspection. One tap lets them in.</p>
+                            </li>
+                        </ol>
+
+                        <div class="grid sm:grid-cols-2 gap-x-10 gap-y-6 mt-10 pt-8 border-t border-ink-900/10">
+                            <div>
+                                <h4 class="label text-ink-900 mb-3">What each inspector sees</h4>
+                                <ul class="space-y-2.5 text-sm text-ink-700 font-medium">
+                                    <li class="flex gap-2.5"><span class="text-cobalt-500 shrink-0">&#10003;</span>Their own dashboard, drafts and report history</li>
+                                    <li class="flex gap-2.5"><span class="text-cobalt-500 shrink-0">&#10003;</span>The same full app the Solo package gives one person</li>
+                                    <li class="flex gap-2.5"><span class="text-cobalt-500 shrink-0">&#10003;</span>Their own name signing the reports they run</li>
+                                    <li class="flex gap-2.5"><span class="text-ink-600/40 shrink-0">&#10007;</span><span class="text-ink-600">Nothing belonging to another inspector</span></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="label text-ink-900 mb-3">What the admin can do</h4>
+                                <ul class="space-y-2.5 text-sm text-ink-700 font-medium">
+                                    <li class="flex gap-2.5"><span class="text-cobalt-500 shrink-0">&#10003;</span>Approve, decline or remove any inspector</li>
+                                    <li class="flex gap-2.5"><span class="text-cobalt-500 shrink-0">&#10003;</span>Open every report from every inspector, in one list</li>
+                                    <li class="flex gap-2.5"><span class="text-cobalt-500 shrink-0">&#10003;</span>Reassign a report to whoever actually ran it</li>
+                                    <li class="flex gap-2.5"><span class="text-cobalt-500 shrink-0">&#10003;</span>Reset a password, ending that inspector&rsquo;s live sessions</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <p class="text-sm text-ink-600/80 mt-9 pt-7 border-t border-ink-900/10 leading-relaxed">Already on Solo and outgrowing it? Pay the $300 difference and we upgrade your deployment in place &mdash; your reports, drafts, settings and checklist stay exactly where they are.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -827,25 +968,64 @@
             <div class="mb-10 reveal">
                 <p class="label text-cobalt-600 mb-4">Order</p>
                 <h2 class="font-display font-extrabold text-ink-900 text-[2.1rem] sm:text-[2.7rem] leading-[1.03] tracking-[-0.03em]">Place your order</h2>
-                <p class="text-lg text-ink-600 mt-5 leading-relaxed">Tell us who the reports belong to and we build your deployment with your branding on the letterhead. Your web app is ready within 48 hours.</p>
+                <p class="text-lg text-ink-600 mt-5 leading-relaxed">Pick a package, tell us who the reports belong to, and we build your deployment with your branding on the letterhead. Your web app is ready within 48 hours.</p>
             </div>
 
             <div class="bg-white border-2 border-ink-900 rounded-sheet stamp overflow-hidden reveal">
                 <div class="flex items-center justify-between gap-4 px-6 sm:px-9 py-3.5 bg-ink-900">
                     <span class="label text-white/50">Order form</span>
-                    <span class="label text-cobalt-300">$499 once</span>
+                    <span class="label text-cobalt-300" id="orderPriceTag">Solo &mdash; $499 once</span>
                 </div>
 
                 <div class="px-6 sm:px-9 py-8 sm:py-10">
                     <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
                         <input type="hidden" name="access_key" value="87774ba7-dcf7-411b-9e40-5e0a81ae5151">
-                        <input type="hidden" name="subject" value="New PPiPro order &mdash; $499 one-time">
+                        <input type="hidden" name="subject" id="orderSubject" value="New PPiPro order &mdash; Solo, $499 one-time">
                         <input type="hidden" name="from_name" value="PPiPro.Click Order">
-                        <input type="hidden" name="redirect" value="https://ppipro.click/thankyou.html">
+                        <input type="hidden" name="redirect" id="orderRedirect" value="https://ppipro.click/thankyou.html?plan=solo">
+
+                        <!-- Which package -->
+                        <fieldset class="space-y-5">
+                            <legend class="label text-ink-900 mb-4 pb-3 border-b border-ink-900/10 w-full">01 &mdash; Your package</legend>
+
+                            <div class="grid md:grid-cols-2 gap-4" id="planPicker">
+                                <label class="plan-opt relative flex flex-col gap-1.5 p-5 rounded-lg border-2 border-ink-900/15 bg-paper cursor-pointer transition-colors hover:border-ink-900/40">
+                                    <input type="radio" name="package" value="Solo &mdash; $499 one-time" class="sr-only" data-plan="solo" data-tag="Solo &mdash; $499 once" data-subject="New PPiPro order &mdash; Solo, $499 one-time" data-btn="Order Solo &mdash; $499 once" data-redirect="https://ppipro.click/thankyou.html?plan=solo" checked>
+                                    <span class="flex items-center justify-between gap-3">
+                                        <span class="font-display font-extrabold text-ink-900 text-lg tracking-[-0.02em]">Solo</span>
+                                        <span class="font-display font-extrabold text-ink-900 text-lg">$499</span>
+                                    </span>
+                                    <span class="text-sm text-ink-600 leading-relaxed">One inspector, one login. The whole app.</span>
+                                    <span class="plan-check absolute -top-2.5 -right-2.5 w-6 h-6 rounded-full bg-cobalt-500 text-white text-xs items-center justify-center hidden">&#10003;</span>
+                                </label>
+                                <label class="plan-opt relative flex flex-col gap-1.5 p-5 rounded-lg border-2 border-ink-900/15 bg-paper cursor-pointer transition-colors hover:border-ink-900/40">
+                                    <input type="radio" name="package" value="Team &mdash; $799 one-time" class="sr-only" data-plan="team" data-tag="Team &mdash; $799 once" data-subject="New PPiPro order &mdash; Team, $799 one-time" data-btn="Order Team &mdash; $799 once" data-redirect="https://ppipro.click/thankyou.html?plan=team">
+                                    <span class="flex items-center justify-between gap-3">
+                                        <span class="font-display font-extrabold text-ink-900 text-lg tracking-[-0.02em]">Team</span>
+                                        <span class="font-display font-extrabold text-ink-900 text-lg">$799</span>
+                                    </span>
+                                    <span class="text-sm text-ink-600 leading-relaxed">Unlimited inspectors, each with their own dashboard, plus an admin who approves them and sees every report.</span>
+                                    <span class="plan-check absolute -top-2.5 -right-2.5 w-6 h-6 rounded-full bg-cobalt-500 text-white text-xs items-center justify-center hidden">&#10003;</span>
+                                </label>
+                            </div>
+                            <p class="text-xs text-ink-600/80 leading-relaxed"><a href="#pricing" class="text-cobalt-600 hover:text-cobalt-700 underline underline-offset-2">Compare the two packages</a> &mdash; or start on Solo and upgrade later for the difference.</p>
+
+                            <div class="space-y-2 hidden" id="inspectorCountWrap">
+                                <label for="order-inspectors" class="label text-ink-700">How many inspectors, roughly?</label>
+                                <select id="order-inspectors" name="inspector_count" class="w-full px-4 py-3.5 rounded-lg border border-ink-900/15 bg-paper focus:bg-white focus:border-cobalt-500 outline-none transition-colors text-ink-900 font-medium">
+                                    <option>2 &ndash; 3</option>
+                                    <option>4 &ndash; 6</option>
+                                    <option>7 &ndash; 12</option>
+                                    <option>More than 12</option>
+                                    <option>Not sure yet</option>
+                                </select>
+                                <p class="text-xs text-ink-600/80 leading-relaxed">Only so we know what to expect &mdash; the price is the same however many you add.</p>
+                            </div>
+                        </fieldset>
 
                         <!-- Who we are building it for -->
-                        <fieldset class="space-y-5">
-                            <legend class="label text-ink-900 mb-4 pb-3 border-b border-ink-900/10 w-full">01 &mdash; Who we&rsquo;re building it for</legend>
+                        <fieldset class="space-y-5 pt-2">
+                            <legend class="label text-ink-900 mb-4 pb-3 border-b border-ink-900/10 w-full">02 &mdash; Who we&rsquo;re building it for</legend>
 
                             <div class="grid md:grid-cols-2 gap-5">
                                 <div class="space-y-2">
@@ -872,7 +1052,7 @@
 
                         <!-- What goes on the letterhead -->
                         <fieldset class="space-y-5 pt-2">
-                            <legend class="label text-ink-900 mb-4 pb-3 border-b border-ink-900/10 w-full">02 &mdash; Your report letterhead</legend>
+                            <legend class="label text-ink-900 mb-4 pb-3 border-b border-ink-900/10 w-full">03 &mdash; Your report letterhead</legend>
 
                             <div class="space-y-2">
                                 <label for="order-address" class="label text-ink-700">Business address</label>
@@ -894,7 +1074,7 @@
 
                         <!-- How they will use it -->
                         <fieldset class="space-y-5 pt-2">
-                            <legend class="label text-ink-900 mb-4 pb-3 border-b border-ink-900/10 w-full">03 &mdash; How you&rsquo;ll use it</legend>
+                            <legend class="label text-ink-900 mb-4 pb-3 border-b border-ink-900/10 w-full">04 &mdash; How you&rsquo;ll use it</legend>
 
                             <div class="space-y-3">
                                 <span class="label text-ink-700 block">Report types you expect to run</span>
@@ -928,7 +1108,7 @@
 
                         <div class="pt-2 space-y-4">
                             <button type="submit" class="w-full bg-ink-900 hover:bg-cobalt-600 text-white font-semibold text-base py-4 rounded-lg transition-colors flex justify-center items-center gap-2">
-                                Order Now &mdash; $499 once
+                                <span id="orderBtnPrice">Order Solo &mdash; $499 once</span>
                                 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13m0 0l-5-5m5 5l-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                             </button>
                             <p class="text-xs text-ink-600/80 text-center leading-relaxed">Sending this places your order &mdash; payment comes next. Your web app is ready within 48 hours.</p>
@@ -955,7 +1135,28 @@
                         Is this a subscription?
                         <span class="faq-mark text-cobalt-500 text-2xl leading-none transition-transform duration-300 shrink-0">+</span>
                     </summary>
-                    <p class="text-ink-600 mt-4 leading-relaxed">No. $499 once, and the platform is yours. There is no monthly fee, no per-report fee and no seat licensing — put as many inspectors on it as you like.</p>
+                    <p class="text-ink-600 mt-4 leading-relaxed">No. You pay once and the platform is yours: $499 for Solo, $799 for Team. There is no monthly fee, no per-report fee, and no per-inspector charge on Team no matter how many inspectors you add.</p>
+                </details>
+                <details class="group py-5">
+                    <summary class="flex items-start justify-between gap-4 text-lg font-semibold text-ink-900">
+                        What&rsquo;s the difference between Solo and Team?
+                        <span class="faq-mark text-cobalt-500 text-2xl leading-none transition-transform duration-300 shrink-0">+</span>
+                    </summary>
+                    <p class="text-ink-600 mt-4 leading-relaxed">Solo is one inspector working under one login. Team is the same app with accounts: every inspector gets their own login and their own dashboard showing only their drafts, reports and history, and reports are signed in the name of whoever ran them. Team also gives you an admin account that approves new inspectors, sees every report from every inspector, reassigns a report to the right person, resets a password and removes access. Every feature of the app itself is in both packages &mdash; <a href="#team" class="text-cobalt-600 hover:text-cobalt-700 underline underline-offset-2">see how Team accounts work</a>.</p>
+                </details>
+                <details class="group py-5">
+                    <summary class="flex items-start justify-between gap-4 text-lg font-semibold text-ink-900">
+                        How does approving a new inspector work?
+                        <span class="faq-mark text-cobalt-500 text-2xl leading-none transition-transform duration-300 shrink-0">+</span>
+                    </summary>
+                    <p class="text-ink-600 mt-4 leading-relaxed">On Team, an inspector signs themselves up with their name, phone, email, a username and the name that should sign their reports. The account is created but stays pending, so they cannot open the app or file anything. It shows up in your admin screen and one tap approves them. You can reset an inspector&rsquo;s password or remove their access at any time, which ends their live sessions immediately.</p>
+                </details>
+                <details class="group py-5">
+                    <summary class="flex items-start justify-between gap-4 text-lg font-semibold text-ink-900">
+                        Can I move from Solo to Team later?
+                        <span class="faq-mark text-cobalt-500 text-2xl leading-none transition-transform duration-300 shrink-0">+</span>
+                    </summary>
+                    <p class="text-ink-600 mt-4 leading-relaxed">Yes. Message us, pay the $300 difference, and we upgrade your deployment in place. Your existing reports, drafts, settings and checklist all stay where they are, and anything filed before the upgrade is assigned to you as the admin.</p>
                 </details>
                 <details class="group py-5">
                     <summary class="flex items-start justify-between gap-4 text-lg font-semibold text-ink-900">
@@ -1108,7 +1309,7 @@
                         </a>
                         <a href="#order" class="inline-flex items-center justify-center gap-2 border border-white/25 hover:bg-white/10 text-white px-8 py-4 rounded-lg font-semibold text-base transition-colors">Order Now</a>
                     </div>
-                    <p class="label text-white/40 mt-6"><a href="#pricing" class="hover:text-white/70 underline underline-offset-4">See everything included &mdash; $499 once</a></p>
+                    <p class="label text-white/40 mt-6"><a href="#pricing" class="hover:text-white/70 underline underline-offset-4">Compare Solo and Team &mdash; from $499 once</a></p>
                 </div>
             </div>
         </div>
@@ -1133,6 +1334,7 @@
                 <a href="#features" class="hover:text-cobalt-300 transition-colors">Features</a>
                 <a href="#report" class="hover:text-cobalt-300 transition-colors">The report</a>
                 <a href="#pricing" class="hover:text-cobalt-300 transition-colors">Pricing</a>
+                <a href="#team" class="hover:text-cobalt-300 transition-colors">For teams</a>
                 <a href="#order" class="hover:text-cobalt-300 transition-colors">Order</a>
                 <a href="#faq" class="hover:text-cobalt-300 transition-colors">FAQ</a>
                 <a href="https://wa.me/17373492749" target="_blank" rel="noopener" class="text-emerald-400 hover:text-emerald-300 transition-colors">WhatsApp</a>
@@ -1234,6 +1436,46 @@
                 submitBtn.disabled = false;
             });
         });
+    </script>
+
+    <!-- Order form: package picker -->
+    <script>
+        (function () {
+            const picker  = document.getElementById('planPicker');
+            const tag     = document.getElementById('orderPriceTag');
+            const subject = document.getElementById('orderSubject');
+            const btn     = document.getElementById('orderBtnPrice');
+            const countWrap = document.getElementById('inspectorCountWrap');
+            const redirect  = document.getElementById('orderRedirect');
+            if (!picker) return;
+
+            const radios = picker.querySelectorAll('input[name="package"]');
+
+            function paint() {
+                radios.forEach(function (r) {
+                    r.closest('.plan-opt').classList.toggle('is-picked', r.checked);
+                    if (r.checked) {
+                        if (tag)     tag.textContent = r.dataset.tag;
+                        if (subject) subject.value = r.dataset.subject;
+                        if (btn)     btn.textContent = r.dataset.btn;
+                        if (redirect) redirect.value = r.dataset.redirect;
+                        if (countWrap) countWrap.classList.toggle('hidden', r.dataset.plan !== 'team');
+                    }
+                });
+            }
+
+            radios.forEach(function (r) { r.addEventListener('change', paint); });
+            paint();
+
+            // Pricing-card CTAs preselect the package they came from
+            document.querySelectorAll('a[href="#order"][data-plan]').forEach(function (a) {
+                a.addEventListener('click', function () {
+                    const want = a.dataset.plan;
+                    radios.forEach(function (r) { r.checked = (r.dataset.plan === want); });
+                    paint();
+                });
+            });
+        })();
     </script>
 
     <!-- Mobile menu -->
