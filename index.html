@@ -300,6 +300,51 @@
 
         .sticky-head { background: rgba(238, 241, 246, 0.88); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
 
+        /* Primary navigation: the sans face, so it reads as navigation rather than
+           another row of form-field labels. Weight never changes between states, so
+           marking a link active cannot shift the row. */
+        .nav-link {
+            position: relative;
+            display: inline-block;
+            padding: 0.4rem 0;
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: -0.005em;
+            color: #2A3A57;
+            white-space: nowrap;
+            transition: color .18s ease;
+        }
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            left: 0; right: 0; bottom: 0;
+            height: 2px;
+            background: #3355E6;
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: transform .22s cubic-bezier(.2, .8, .3, 1);
+        }
+        .nav-link:hover { color: #0A1020; }
+        .nav-link:hover::after,
+        .nav-link.is-active::after { transform: scaleX(1); }
+        .nav-link.is-active { color: #0A1020; }
+
+        /* Mobile menu rows: same active accent, drawn inside so nothing reflows */
+        .nav-link-m {
+            padding: 0.85rem 0 0.85rem 0.85rem;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: #1B2740;
+            border-bottom: 1px solid rgba(10, 16, 32, 0.08);
+            transition: color .18s ease, background-color .18s ease;
+        }
+        .nav-link-m:hover { color: #0A1020; background: rgba(51, 85, 230, 0.05); }
+        .nav-link-m.is-active { color: #0A1020; box-shadow: inset 2px 0 0 #3355E6; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .nav-link::after { transition: none; }
+        }
+
         /* Faint ruled ground — the paper the checklist is printed on */
         .ruled {
             background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 31px, rgba(10, 16, 32, 0.045) 31px, rgba(10, 16, 32, 0.045) 32px);
@@ -358,44 +403,45 @@
                 </span>
             </a>
 
-            <div class="hidden lg:flex items-center gap-8 label text-ink-600">
-                <a href="#how" class="hover:text-cobalt-600 transition-colors">How it works</a>
-                <a href="#features" class="hover:text-cobalt-600 transition-colors">Features</a>
-                <a href="#report" class="hover:text-cobalt-600 transition-colors">The report</a>
-                <a href="#types" class="hover:text-cobalt-600 transition-colors">Report types</a>
-                <a href="#pricing" class="hover:text-cobalt-600 transition-colors">Pricing</a>
-                <a href="#team" class="hover:text-cobalt-600 transition-colors">For teams</a>
-                <a href="#order" class="hover:text-cobalt-600 transition-colors">Order</a>
-                <a href="#contact" class="hover:text-cobalt-600 transition-colors">Contact</a>
+            <div class="hidden xl:flex items-center gap-x-5" id="primaryNav" aria-label="Primary">
+                <a href="#how" class="nav-link">How it works</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#report" class="nav-link">The report</a>
+                <a href="#types" class="nav-link">Report types</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#team" class="nav-link">For teams</a>
+                <a href="#order" class="nav-link">Order</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
 
             <div class="flex items-center gap-2 shrink-0">
                 <a href="#order" class="hidden sm:flex bg-cobalt-500 hover:bg-cobalt-600 text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition-colors items-center gap-2">
                     Order Now
                 </a>
-                <a href="https://script.google.com/macros/s/AKfycbxN-6FX03zsP7oT11PZrxdrlCJY2TLbKXYty4XuOGc8a7dV3z9ALByb4JFRuIu6Il-e/exec" target="_blank" rel="noopener" class="bg-ink-900 hover:bg-cobalt-600 text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition-colors flex items-center gap-2">
-                    Try it For Free
-                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13m0 0l-5-5m5 5l-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <a href="https://script.google.com/macros/s/AKfycbxN-6FX03zsP7oT11PZrxdrlCJY2TLbKXYty4XuOGc8a7dV3z9ALByb4JFRuIu6Il-e/exec" target="_blank" rel="noopener" class="bg-ink-900 hover:bg-cobalt-600 text-white px-4 sm:px-5 py-2.5 rounded-lg font-semibold text-[0.8125rem] sm:text-sm transition-colors flex items-center gap-2 whitespace-nowrap">
+                    <span class="sm:hidden">Try it free</span>
+                    <span class="hidden sm:inline">Try it For Free</span>
+                    <svg class="w-4 h-4 hidden sm:block" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13m0 0l-5-5m5 5l-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </a>
-                <button type="button" id="navToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu" class="lg:hidden w-10 h-10 rounded-lg border border-ink-900/15 bg-white flex items-center justify-center text-ink-700">
+                <button type="button" id="navToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu" class="xl:hidden w-10 h-10 rounded-lg border border-ink-900/15 bg-white flex items-center justify-center text-ink-700 hover:border-ink-900/40 transition-colors">
                     <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
                 </button>
             </div>
         </div>
 
-        <div id="mobileMenu" class="hidden lg:hidden border-t border-ink-900/10 bg-white">
-            <div class="px-6 py-3 grid text-sm font-semibold text-ink-700">
-                <a href="#how" class="py-3 border-b border-ink-900/10">How it works</a>
-                <a href="#features" class="py-3 border-b border-ink-900/10">Features</a>
-                <a href="#report" class="py-3 border-b border-ink-900/10">The report</a>
-                <a href="#types" class="py-3 border-b border-ink-900/10">Report types</a>
-                <a href="#field" class="py-3 border-b border-ink-900/10">See it in the field</a>
-                <a href="#pricing" class="py-3 border-b border-ink-900/10">Pricing</a>
-                <a href="#team" class="py-3 border-b border-ink-900/10">For teams</a>
-                <a href="#order" class="py-3 border-b border-ink-900/10">Order</a>
-                <a href="#faq" class="py-3 border-b border-ink-900/10">FAQ</a>
-                <a href="#contact" class="py-3 border-b border-ink-900/10">Contact</a>
-                <a href="#order" class="mt-3 mb-1 bg-cobalt-500 hover:bg-cobalt-600 text-white text-center py-3.5 rounded-lg">Order Now</a>
+        <div id="mobileMenu" class="hidden xl:hidden border-t border-ink-900/10 bg-white">
+            <div class="px-5 py-2 grid" id="mobileNavLinks">
+                <a href="#how" class="nav-link-m">How it works</a>
+                <a href="#features" class="nav-link-m">Features</a>
+                <a href="#report" class="nav-link-m">The report</a>
+                <a href="#types" class="nav-link-m">Report types</a>
+                <a href="#field" class="nav-link-m">See it in the field</a>
+                <a href="#pricing" class="nav-link-m">Pricing</a>
+                <a href="#team" class="nav-link-m">For teams</a>
+                <a href="#order" class="nav-link-m">Order</a>
+                <a href="#faq" class="nav-link-m">FAQ</a>
+                <a href="#contact" class="nav-link-m">Contact</a>
+                <a href="#order" class="mt-4 mb-3 bg-cobalt-500 hover:bg-cobalt-600 text-white text-center py-3.5 rounded-lg font-semibold text-sm transition-colors">Order Now</a>
             </div>
         </div>
     </nav>
@@ -1495,6 +1541,56 @@
             toggle.addEventListener('click', () => setOpen(menu.classList.contains('hidden')));
             menu.addEventListener('click', (e) => { if (e.target.tagName === 'A') setOpen(false); });
             window.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+        })();
+    </script>
+
+    <!-- Nav: mark the section currently under the header -->
+    <script>
+        (function () {
+            const links = Array.prototype.slice.call(
+                document.querySelectorAll('.nav-link[href^="#"], .nav-link-m[href^="#"]')
+            );
+            if (!links.length) return;
+
+            // Pair each link with its target, keeping only the ones that resolve
+            const targets = links.map(function (a) {
+                const el = document.getElementById(a.getAttribute('href').slice(1));
+                return el ? { link: a, el: el } : null;
+            }).filter(Boolean);
+            if (!targets.length) return;
+
+            let ticking = false;
+
+            function mark() {
+                ticking = false;
+                const line = window.scrollY + 90;          // just under the sticky header
+                const bottom = window.scrollY + window.innerHeight;
+                const atEnd = bottom >= document.documentElement.scrollHeight - 2;
+
+                let currentId = null;
+                targets.forEach(function (t) {
+                    if (t.el.getBoundingClientRect().top + window.scrollY <= line) currentId = t.el.id;
+                });
+                // The last section rarely reaches the line, so the foot of the page claims it
+                if (atEnd) currentId = targets[targets.length - 1].el.id;
+
+                targets.forEach(function (t) {
+                    const on = t.el.id === currentId;
+                    t.link.classList.toggle('is-active', on);
+                    if (on) t.link.setAttribute('aria-current', 'true');
+                    else t.link.removeAttribute('aria-current');
+                });
+            }
+
+            function onScroll() {
+                if (ticking) return;
+                ticking = true;
+                window.requestAnimationFrame(mark);
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', onScroll, { passive: true });
+            mark();
         })();
     </script>
 
