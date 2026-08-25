@@ -65,7 +65,7 @@
         "Searchable report history, auto-saved drafts, and one-tap cloning of a past report",
         "Six report types: Pre-Purchase Inspection, plus Total Loss, Diminished Value, Classic Vehicle, Auction Arbitration and Finance appraisals",
         "Optional comparable-listing research for appraisal reports, with every link verified before it prints",
-        "Team plan: a separate login and private dashboard for every inspector, with reports signed in their own name",
+        "Team plan: a separate login, private dashboard and personal signature for every inspector, so each report is signed by the person who ran it",
         "Team plan: new inspectors sign themselves up and stay locked out until the admin approves them",
         "Team plan: admin oversight of every inspector's reports, with reassignment, password resets and access removal"
       ],
@@ -131,12 +131,12 @@
         {
           "@type": "Question",
           "name": "What is the difference between Solo and Team?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Solo is one inspector working under one login. Team is the same app with accounts: every inspector gets their own login and their own dashboard showing only their drafts, reports and history, and reports are signed in the name of whoever ran them. Team also gives you an admin account that approves new inspectors, sees every report from every inspector, reassigns a report to the right person, resets a password and removes access. Every feature of the app itself is in both plans." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Solo is one inspector working under one login. Team is the same app with accounts: every inspector gets their own login and their own dashboard showing only their drafts, reports and history, and their own signature, so each report is signed by the person who actually ran it. Team also gives you an admin account that approves new inspectors, sees every report from every inspector, reassigns a report to the right person, resets a password and removes access. Every feature of the app itself is in both plans." }
         },
         {
           "@type": "Question",
           "name": "How does approving a new inspector work?",
-          "acceptedAnswer": { "@type": "Answer", "text": "On the Team plan an inspector signs themselves up with their name, phone, email, a username and the name that should sign their reports. The account is created but stays pending, so they cannot open the app or file anything. It appears in your admin screen, and one tap approves them. You can also reset an inspector's password or remove their access at any time, which ends their live sessions immediately." }
+          "acceptedAnswer": { "@type": "Answer", "text": "On the Team plan an inspector signs themselves up with their name, phone, email, a username and the name their signature is generated from, so their reports carry their own signature rather than yours. The account is created but stays pending, so they cannot open the app or file anything. It appears in your admin screen, and one tap approves them. You can also reset an inspector's password or remove their access at any time, which ends their live sessions immediately." }
         },
         {
           "@type": "Question",
@@ -869,7 +869,7 @@
                             <li class="flex gap-2.5"><span class="text-cobalt-300 shrink-0">&#10003;</span>New inspectors sign themselves up and wait for your approval</li>
                             <li class="flex gap-2.5"><span class="text-cobalt-300 shrink-0">&#10003;</span>Admin sees, opens and reassigns every inspector&rsquo;s reports</li>
                             <li class="flex gap-2.5"><span class="text-cobalt-300 shrink-0">&#10003;</span>Reset a password or pull access in one tap</li>
-                            <li class="flex gap-2.5"><span class="text-cobalt-300 shrink-0">&#10003;</span>Each report signed in the inspector&rsquo;s own name</li>
+                            <li class="flex gap-2.5"><span class="text-cobalt-300 shrink-0">&#10003;</span>Every inspector has their own signature on their reports</li>
                             <li class="flex gap-2.5"><span class="text-cobalt-300 shrink-0">&#10003;</span>Unlimited inspectors &mdash; the price does not change</li>
                         </ul>
                         <div class="mt-auto pt-9">
@@ -924,7 +924,7 @@
                             <li>
                                 <p class="label text-cobalt-600">Step 02</p>
                                 <h4 class="font-semibold text-ink-900 mt-2.5">Your inspectors sign themselves up</h4>
-                                <p class="text-sm text-ink-600 mt-2 leading-relaxed">Name, phone, email, a username of their own and the name that should sign their reports. You are not creating accounts by hand or handing round a shared password.</p>
+                                <p class="text-sm text-ink-600 mt-2 leading-relaxed">Name, phone, email, a username of their own and the name their signature is generated from. You are not creating accounts by hand or handing round a shared password.</p>
                             </li>
                             <li>
                                 <p class="label text-cobalt-600">Step 03</p>
@@ -939,7 +939,7 @@
                                 <ul class="space-y-2.5 text-sm text-ink-700 font-medium">
                                     <li class="flex gap-2.5"><span class="text-cobalt-500 shrink-0">&#10003;</span>Their own dashboard, drafts and report history</li>
                                     <li class="flex gap-2.5"><span class="text-cobalt-500 shrink-0">&#10003;</span>The same full app the Solo package gives one person</li>
-                                    <li class="flex gap-2.5"><span class="text-cobalt-500 shrink-0">&#10003;</span>Their own name signing the reports they run</li>
+                                    <li class="flex gap-2.5"><span class="text-cobalt-500 shrink-0">&#10003;</span>Their own signature on every report they run</li>
                                     <li class="flex gap-2.5"><span class="text-ink-600/40 shrink-0">&#10007;</span><span class="text-ink-600">Nothing belonging to another inspector</span></li>
                                 </ul>
                             </div>
@@ -1067,6 +1067,7 @@
                                 <div class="space-y-2">
                                     <label for="order-signature" class="label text-ink-700">Name to sign reports</label>
                                     <input type="text" id="order-signature" name="signature_name" placeholder="As it should appear signed" class="w-full px-4 py-3.5 rounded-lg border border-ink-900/15 bg-paper focus:bg-white focus:border-cobalt-500 outline-none transition-colors text-ink-900 placeholder:text-ink-600/40 font-medium">
+                                    <p class="text-xs text-ink-600/80 leading-relaxed hidden" id="teamSigNote">Yours, as the admin. Each inspector sets their own signature when they sign up.</p>
                                 </div>
                             </div>
 
@@ -1142,14 +1143,14 @@
                         What&rsquo;s the difference between Solo and Team?
                         <span class="faq-mark text-cobalt-500 text-2xl leading-none transition-transform duration-300 shrink-0">+</span>
                     </summary>
-                    <p class="text-ink-600 mt-4 leading-relaxed">Solo is one inspector working under one login. Team is the same app with accounts: every inspector gets their own login and their own dashboard showing only their drafts, reports and history, and reports are signed in the name of whoever ran them. Team also gives you an admin account that approves new inspectors, sees every report from every inspector, reassigns a report to the right person, resets a password and removes access. Every feature of the app itself is in both packages &mdash; <a href="#team" class="text-cobalt-600 hover:text-cobalt-700 underline underline-offset-2">see how Team accounts work</a>.</p>
+                    <p class="text-ink-600 mt-4 leading-relaxed">Solo is one inspector working under one login. Team is the same app with accounts: every inspector gets their own login and their own dashboard showing only their drafts, reports and history, and their own signature, so each report is signed by the person who actually ran it. Team also gives you an admin account that approves new inspectors, sees every report from every inspector, reassigns a report to the right person, resets a password and removes access. Every feature of the app itself is in both packages &mdash; <a href="#team" class="text-cobalt-600 hover:text-cobalt-700 underline underline-offset-2">see how Team accounts work</a>.</p>
                 </details>
                 <details class="group py-5">
                     <summary class="flex items-start justify-between gap-4 text-lg font-semibold text-ink-900">
                         How does approving a new inspector work?
                         <span class="faq-mark text-cobalt-500 text-2xl leading-none transition-transform duration-300 shrink-0">+</span>
                     </summary>
-                    <p class="text-ink-600 mt-4 leading-relaxed">On Team, an inspector signs themselves up with their name, phone, email, a username and the name that should sign their reports. The account is created but stays pending, so they cannot open the app or file anything. It shows up in your admin screen and one tap approves them. You can reset an inspector&rsquo;s password or remove their access at any time, which ends their live sessions immediately.</p>
+                    <p class="text-ink-600 mt-4 leading-relaxed">On Team, an inspector signs themselves up with their name, phone, email, a username and the name their signature is generated from, so their reports carry their own signature rather than yours. The account is created but stays pending, so they cannot open the app or file anything. It shows up in your admin screen and one tap approves them. You can reset an inspector&rsquo;s password or remove their access at any time, which ends their live sessions immediately.</p>
                 </details>
                 <details class="group py-5">
                     <summary class="flex items-start justify-between gap-4 text-lg font-semibold text-ink-900">
@@ -1447,6 +1448,7 @@
             const btn     = document.getElementById('orderBtnPrice');
             const countWrap = document.getElementById('inspectorCountWrap');
             const redirect  = document.getElementById('orderRedirect');
+            const sigNote   = document.getElementById('teamSigNote');
             if (!picker) return;
 
             const radios = picker.querySelectorAll('input[name="package"]');
@@ -1460,6 +1462,7 @@
                         if (btn)     btn.textContent = r.dataset.btn;
                         if (redirect) redirect.value = r.dataset.redirect;
                         if (countWrap) countWrap.classList.toggle('hidden', r.dataset.plan !== 'team');
+                        if (sigNote)   sigNote.classList.toggle('hidden', r.dataset.plan !== 'team');
                     }
                 });
             }
