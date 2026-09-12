@@ -472,6 +472,9 @@
                         See how it works
                     </a>
                 </div>
+                <p class="mt-4 text-sm text-ink-600">
+                    Or <a href="https://drive.google.com/file/d/1vCPXD15Lrlw2A_wyHbapITJcaSYIrx-U/view" target="_blank" rel="noopener" class="font-semibold text-cobalt-600 hover:text-cobalt-700 underline decoration-cobalt-500/40 underline-offset-4">view a real sample report (PDF)</a> first.
+                </p>
 
                 <!-- Plain-language promises, no scoreboard -->
                 <ul class="mt-10 flex flex-wrap gap-2.5">
@@ -663,6 +666,14 @@
                         <p class="text-white/60 leading-relaxed mt-3">Green, blue, amber and red do the explaining. A buyer sees what is fine, what will need attention and what needs fixing now in the first few seconds, with your comment and a captioned photo beside anything that matters. That is the half-hour walkthrough call you no longer have to make.</p>
                     </div>
 
+                    <div class="mb-9 flex flex-col sm:flex-row sm:items-center gap-3">
+                        <a href="https://drive.google.com/file/d/1vCPXD15Lrlw2A_wyHbapITJcaSYIrx-U/view" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2.5 bg-white hover:bg-cobalt-500 text-ink-900 hover:text-white px-6 py-3.5 rounded-lg font-semibold text-sm transition-colors">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 3h7l5 5v13a1 1 0 01-1 1H7a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 3v5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            View a real sample report (PDF)
+                        </a>
+                        <p class="text-sm text-white/60">Opens in a new tab. A complete pre-purchase inspection, exactly as the customer receives it.</p>
+                    </div>
+
                     <div class="flex flex-wrap gap-x-8 gap-y-4">
                         <div>
                             <p class="font-display font-extrabold text-3xl">1–2 MB</p>
@@ -679,13 +690,18 @@
                     </div>
                 </div>
 
-                <div class="relative reveal">
-                    <div class="bg-white p-2 rounded-sheet border-2 border-white/10 shadow-2xl shadow-black/40">
-                        <img src="https://ppi.is-best.net/pictures/prepurchaseinspectionwebapp/ppisample1.jpeg" alt="Page one of a pre-purchase inspection PDF report with white-label letterhead and vehicle details" loading="lazy" decoding="async" class="w-full rounded-lg">
-                    </div>
-                    <div class="absolute -bottom-8 -right-3 sm:-right-8 w-[46%] bg-white p-1.5 rounded-lg border-2 border-white/10 shadow-2xl shadow-black/50">
-                        <img src="https://ppi.is-best.net/pictures/prepurchaseinspectionwebapp/ppiphotos.jpeg" alt="Photo addendum page showing captioned inspection photographs" loading="lazy" decoding="async" class="w-full rounded">
-                    </div>
+                <div class="reveal">
+                    <a href="https://drive.google.com/file/d/1vCPXD15Lrlw2A_wyHbapITJcaSYIrx-U/view" target="_blank" rel="noopener" class="block group" aria-label="Open the full sample inspection report as a PDF">
+                        <div class="relative">
+                            <div class="bg-white p-2 rounded-sheet border-2 border-white/10 group-hover:border-cobalt-400 shadow-2xl shadow-black/40 transition-colors">
+                                <img src="https://ppi.is-best.net/pictures/prepurchaseinspectionwebapp/ppisample1.jpeg" alt="Page one of a pre-purchase inspection PDF report with white-label letterhead and vehicle details" loading="lazy" decoding="async" class="w-full rounded-lg">
+                            </div>
+                            <div class="absolute -bottom-8 -right-3 sm:-right-8 w-[46%] bg-white p-1.5 rounded-lg border-2 border-white/10 shadow-2xl shadow-black/50">
+                                <img src="https://ppi.is-best.net/pictures/prepurchaseinspectionwebapp/ppiphotos.jpeg" alt="Photo addendum page showing captioned inspection photographs" loading="lazy" decoding="async" class="w-full rounded">
+                            </div>
+                        </div>
+                        <p class="label text-white/50 group-hover:text-cobalt-300 mt-14 transition-colors">Sample report &mdash; click to open the full PDF</p>
+                    </a>
                 </div>
             </div>
 
@@ -772,8 +788,8 @@
             </div>
 
             <!-- Appraisal extras, incl. comparable research -->
-            <div class="mt-6 grid md:grid-cols-3 gap-5 reveal">
-                <div class="md:col-span-2 bg-white border border-ink-900/10 rounded-sheet p-7">
+            <div class="mt-6 reveal">
+                <div class="bg-white border border-ink-900/10 rounded-sheet p-7">
                     <p class="label text-ink-600/70 mb-3">On appraisal types only</p>
                     <h3 class="font-display font-bold text-xl text-ink-900 mb-3">Comparable listing research, if you want it</h3>
                     <p class="text-sm text-ink-600 leading-relaxed mb-5">When a report calls for a figure, the app can search the web for comparable vehicles, bring back the price, mileage and source for each, then open every link to confirm it is still live before printing it. Choose a local, regional or nationwide search area — or skip the whole thing and type comparables in yourself. Leave the value blank and no figure appears anywhere on the document.</p>
@@ -788,11 +804,6 @@
                         </div>
                     </div>
                     <p class="text-xs text-ink-600/70 mt-3">A link is only printed if the app could open it. Anything it cannot confirm prints by price and source instead, with the address held back.</p>
-                </div>
-                <div class="bg-white border border-ink-900/10 rounded-sheet p-7">
-                    <p class="label text-ink-600/70 mb-3">Good to know</p>
-                    <h3 class="font-display font-bold text-xl text-ink-900 mb-3">It's optional, and it's cheap</h3>
-                    <p class="text-sm text-ink-600 leading-relaxed">The research feature uses your own Claude API key, added once in Settings — about 10&cent; per search, and repeating the same vehicle within 30 minutes is free. Everything else in the platform works without a key at all.</p>
                 </div>
             </div>
         </div>
@@ -1351,6 +1362,9 @@
                             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none"><path d="M5 12h13m0 0l-5-5m5 5l-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </a>
                         <a href="#order" class="inline-flex items-center justify-center gap-2 border border-white/25 hover:bg-white/10 text-white px-8 py-4 rounded-lg font-semibold text-base transition-colors">Order Now</a>
+                        <a href="https://drive.google.com/file/d/1vCPXD15Lrlw2A_wyHbapITJcaSYIrx-U/view" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 border border-white/25 hover:bg-white/10 text-white px-8 py-4 rounded-lg font-semibold text-base transition-colors">
+                            View a sample report
+                        </a>
                     </div>
                     <p class="label text-white/40 mt-6"><a href="#pricing" class="hover:text-white/70 underline underline-offset-4">Compare Solo and Team &mdash; from $499 once</a></p>
                 </div>
